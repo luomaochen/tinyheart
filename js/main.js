@@ -1,6 +1,4 @@
-/**
- * Created by st on 2017/11/21.
- */
+
 var can1;
 var can2;
 
@@ -29,8 +27,14 @@ var babyBody=[];
 
 var momTail=[];
 var momEye=[];
+var momBodyOra=[];
+var momBodyBlue=[];
 
 var data;
+var wave;
+
+var dust;
+var dustPic=[];
 
 
 document.body.onload=game;
@@ -56,7 +60,7 @@ function init() {
 
     bgPic.src="./src/background.jpg";
 
-    canWidth=can1.width;
+    canWidth =can1.width;
     canHeight=can1.height;
 
     ane=new aneObj();
@@ -108,6 +112,29 @@ function init() {
 
     data =new dataObj();
 
+    for(var i=0;i<8;i++)
+    {
+        momBodyOra[i]=new Image();
+        momBodyBlue[i]=new Image();
+        momBodyOra[i].src="./src/bigSwim"+i+".png";
+        momBodyBlue[i].src="./src/bigSwimBlue"+i+".png";
+    }
+
+    ctx1.font="30px Verdana";
+    ctx1.textAlign="center";
+
+    wave=new waveObj();
+    wave.init();
+
+    for(var i=0;i<7;i++)
+    {
+      dustPic[i]=new Image();
+      dustPic[i].src="./src/dust"+i+".png";
+    }
+    dust=new dustObj();
+    dust.init();
+
+
 }
 
 
@@ -122,7 +149,9 @@ function gameloop() {
 
     drawBackground();
     ane.draw();
+
     fruitMonitor();
+
     fruit.draw();
     ctx1.clearRect(0,0,canWidth,canHeight);
     mom.draw();
@@ -132,18 +161,24 @@ function gameloop() {
     momBabyCollision();
 
     data.draw();
+    wave.draw();
+    dust.draw();
 
 
 }
 
 function onMouseMove(e)
 {
-        if(e.offsetX||e.layerX)
+        if(!data.gameOver)
         {
-            mx=e.offsetX==undefined?e.layerX:e.offsetX;
-            my=e.offsetY==undefined?e.layerY:e.offsetY;
+            if(e.offsetX||e.layerX)
+            {
+                mx=e.offsetX==undefined?e.layerX:e.offsetX;
+                my=e.offsetY==undefined?e.layerY:e.offsetY;
 
+            }
         }
+
 }
 
 

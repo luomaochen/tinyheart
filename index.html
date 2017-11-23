@@ -37,6 +37,25 @@
             z-index: 0;
 
         }
+        #text{
+            display: block;
+            width: 800px;
+            margin: 30px auto;
+            color: darkblue;
+        }
+
+        #p{
+            display: block;
+            width:800px;
+            margin: 10px auto;
+            color: maroon;
+        }
+        #p1{
+            display: block;
+            width: 200px;
+            margin: 5px 20px 10px 1150px;
+            color: gray;
+        }
 
 
     </style>
@@ -44,6 +63,11 @@
 </head>
 <body>
 
+    <div>
+        <h2 id="text">TinyHeart GAME </h2>
+        <p id="p">控制大鱼吃海藻喂小鱼，小鱼会逐渐虚弱，要时刻喂！</p>
+        <p id="p1">作者：罗茂琛</p>
+    </div>
     <div class="all_bg">
         <div   id="allcanvas">
                 <canvas id="canvas1" width="800" height="600"></canvas>
@@ -52,6 +76,8 @@
 
 
         </div>
+
+
 
 
 
@@ -66,6 +92,8 @@
     <script type="text/javascript"  src="js/collision.js"></script>
     <script type="text/javascript"  src="js/baby.js"></script>
     <script type="text/javascript"  src="js/data.js"></script>
+    <script type="text/javascript"  src="js/wave.js"></script>
+    <script type="text/javascript"  src="js/dust.js"></script>
 
 
 </body>

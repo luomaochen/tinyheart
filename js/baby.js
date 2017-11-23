@@ -75,6 +75,7 @@ babyObj.prototype.draw=function ()
         {
             this.babyBodyCount=19;
             //game over
+            data.gameOver=true;
         }
     }
 
